@@ -1,0 +1,52 @@
+<include file="Public:header" xmlns="http://www.w3.org/1999/html"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/index.css?v=140426161232"/>
+
+<div class="wrapper">
+<form method="POST" id="form" action="./editSave?id={$_GET['id']}">
+    <table>
+        <tr>
+            <td>接口名称：</td>
+            <td>
+                <input class="input-t" name="name" value="{$row['name']}" type="text" maxlength="120" data-validator='{"required":1,"messages":{"required":"请输入接口名称"}}'/>
+                <span class="red">*</span>
+            </td>
+        </tr>
+        <tr>
+            <td>接口描述：</td>
+            <td>
+                <textarea class="input-t middle" name="desc" type="text" maxlength="250">{$row.desc}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="tr">参数：</td>
+            <td>
+                <textarea class="input-t middle" name="params" id="params" type="text" style="height: 250px;"  data-validator='{"required":1,"messages":{"required":"请输入接口参数"}}'>{$row.params}</textarea>
+                <span class="red">*</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="tr">返回：</td>
+            <td>
+                <textarea class="input-t middle" name="result" type="text" style="height: 200px;"  data-validator='{"required":1,"messages":{"required":"请输入放回内容"}}'>{$row.result}</textarea>
+                <span class="red">*</span>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" id="submitButton" class="orangeButton" value=" 更 新 "/>
+                <input type="submit" class="hide"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+
+<include file="Public:include" />
+
+<script type="text/javascript">
+    requirejs([ 'apiAdd' ], function() {
+    });
+</script>
+
+<include file="Public:footer" />

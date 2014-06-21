@@ -1,0 +1,63 @@
+/* layout */
+body{
+    font-size: 14px;
+}
+.wrapper {
+    width: 960px;
+    margin: auto;
+}
+
+.input-t{
+    width: 450px;
+}
+
+.input-t{
+    width: 450px;
+}
+
+td{
+    padding:3px;
+    position: relative;
+}
+
+
+textarea.input-t{
+    width: 650px;
+}
+
+.red{
+    color: red;
+}
+
+.middle{
+    vertical-align: middle;
+}
+
+.tr{
+    text-align:right;
+}
+
+label.validator_error {
+    position: absolute;
+    left: 308px;
+    top: 50%;
+    color: #fc6000;
+    font-size: 12px;
+    padding-left: 20px;
+    height: 41px;
+    width: 250px;
+    margin-top: -25px;
+    background: url(http://item.koudai.com/images/login_validate_bg_w20.png) no-repeat left center;
+    _background-image: url(http://item.koudai.com/images/login_validate_bg_w20_8.png);
+}
+label.validator_error span {
+    border: 1px solid #d6d6d6;
+    border-left: 0;
+    border-radius: 3px;
+    height: 39px;
+    display: inline-block;
+    background: #fffede;
+    padding-right: 10px;
+    line-height: 39px;
+    background: #fffede;
+}

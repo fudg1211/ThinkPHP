@@ -1,0 +1,24 @@
+<include file="Public:header" xmlns="http://www.w3.org/1999/html"/>
+
+<div class="wrapper">
+    <h1 class="title">项目列表</h1>
+    <hr>
+    <div class="row">
+        <div class="span12">
+            <ul>
+                <foreach name="data" item="item">
+                    <li><a href="../Api/index?projectId={$item.id}">{$item.name}</a> <span class="h6">{$item.author} {$item.createTime}</span></li>
+                </foreach>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<include file="Public:include"/>
+
+<script type="text/javascript">
+//    requirejs([ 'index' ], function () {
+//    });
+</script>
+
+<include file="Public:footer"/>

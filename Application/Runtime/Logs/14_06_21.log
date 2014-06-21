@@ -1,0 +1,13 @@
+[ 2014-06-21T13:46:38+08:00 ] ::1 /ThinkPHP/index.php/Home/Api/addSave?projectId=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.029297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009462s ]
+SQL: SHOW COLUMNS FROM `api_list` [ RunTime:0.168216s ]
+SQL: INSERT INTO `api_list` (`projectId`,`author`) VALUES (1,'') [ RunTime:0.014073s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.024466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.024551s ]
+
