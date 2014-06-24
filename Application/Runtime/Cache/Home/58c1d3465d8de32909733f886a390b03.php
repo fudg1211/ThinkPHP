@@ -16,16 +16,21 @@
         </div>
     </div>
 </div>
+<style type="text/css">
+    .code-title {
+        text-indent: -8px;
+    }
+</style>
 
 <div class="wrapper">
-    <h1 class="title"><?php echo ($project["name"]); ?></h1>
+    <h1 class="title"><?php echo ($project["name"]); ?> <a href="add?projectId=<?php echo ($project["id"]); ?>">增加</a> </h1>
     <hr>
     <div class="row">
         <div class="span12">
-                <?php if(is_array($rows)): foreach($rows as $key=>$item): ?><h4 id="h4_4"><?php echo ($item["name"]); ?></h4>
-                    <pre><code><?php echo (trim($item["desc"])); ?>
-                        <p>【参数】</p><p><?php echo (trim($item["paramsFormat"])); ?></p>
-                        <p>【返回】</p><p><?php echo (trim($item["result"])); ?></p></code></pre><?php endforeach; endif; ?>
+            <?php if(is_array($rows)): foreach($rows as $key=>$item): ?><h4 id="h4_4"><?php echo ($item["name"]); ?> <a href="edit?id=<?php echo ($item["id"]); ?>">编辑</a> <a class="J_del" href="del?id=<?php echo ($item["id"]); ?>">删除</a></h4>
+                    <pre><code><div class="code-title">【描述】</div><?php if($item["desc"] != ''): echo (trim($item["desc"])); ?><br/><?php endif; ?>
+                        <div class="code-title">【参数】</div><div><?php echo (trim($item["paramsFormat"])); ?></div>
+                        <div class="code-title">【返回】</div><div><?php echo (trim($item["result"])); ?></div></code></pre><?php endforeach; endif; ?>
         </div>
     </div>
 </div>
@@ -34,8 +39,7 @@
 <script type="text/javascript" src="http://item.koudai.com/js/require.js" data-main="/ThinkPHP/Public/js/app"></script>
 
 <script type="text/javascript">
-//    requirejs([ 'index' ], function () {
-//    });
+    requirejs();
 </script>
 
 </body>

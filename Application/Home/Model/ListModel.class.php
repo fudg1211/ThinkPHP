@@ -9,20 +9,21 @@
 namespace Home\Model;
 use Think\Model;
 class ListModel extends Model {
+    public $arr;
+
     public function _after_select($arr){
 
-//        foreach($arr as $k=>$v){
-//            if($v['params']){
-//                $arr[$k]['paramsFormat'] =  preg_replace('/\*\s*=/','<span class="red">*</span> =',  $v['params']);
-//            }
-//        }
-//
+        foreach($arr as $k=>$v){
+            if($v['params']){
+                $arr[$k]['paramsFormat'] =  preg_replace('/\*\s*=/','<span class="red">*</span> =',  $v['params']);
+            }
+        }
 
-        $arr[0]['paramsFormat']='sdfsfd';
 
-        return $arr;
 
+        $this->arr=$arr;
     }
+
 
     protected  $_validate = array(
         array('name','require','请输入名称！'),

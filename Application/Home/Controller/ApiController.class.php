@@ -6,13 +6,13 @@ class ApiController extends Controller {
     public function index(){
         $table = D('list');
         $conditiona['projectId']=I('get.projectId');
-        $rows = $table->where($conditiona)->select();
+        $table->where($conditiona)->select();
 
-        print_r($rows);exit;
+        $rows = $table->arr;
 
         $table_project = M('project');
         $condition['id'] = I('get.projectId');
-        $project = $table_project->where($condition)->find(1);
+        $project = $table_project->where($condition)->find();
 
         $this->assign('project',$project);
         $this->assign('rows',$rows);
@@ -20,7 +20,6 @@ class ApiController extends Controller {
     }
 
     public function add(){
-
         $this->display();
     }
 
@@ -34,7 +33,7 @@ class ApiController extends Controller {
         }
 
         $table->add();
-
+        redirect('index?projectId='.$_POST['projectId']);
     }
 
 
@@ -69,7 +68,23 @@ class ApiController extends Controller {
         }
 
 
-        $table->where("id='"+$id+"'")->save();
+        $table->where("id='".$id."'")->save();
+        redirect('index?projectId='.$row['projectId']);
+    }
+
+    public function del(){
+        $id = I('get.id');
+        $table = D('list');
+
+        $condition['id'] = $id;
+        $row = $table->where($condition)->find();
+
+        if(!$row){
+            errorBack('删除失败，没有这条数据');
+            exit();
+        }
+
+        $table->where("id='".$id."'")->delete();
         redirect('index?projectId='.$row['projectId']);
     }
 }

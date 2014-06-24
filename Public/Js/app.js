@@ -17,7 +17,7 @@ requirejs.config({
 
 // Start the main app logic.
 requirejs(
-	['./lib/Fish','./lib/ejs_production', './lib/ejs_production','./global/global'],
+	['./lib/Fish','./lib/ejs_production', './lib/ejs_production','./global/global','./public/initBind'],
 	function () {
 		//jQuery, canvas and the app/sub module are all
 		//loaded and can be used here now.

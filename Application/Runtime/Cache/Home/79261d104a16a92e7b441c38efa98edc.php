@@ -37,7 +37,7 @@
         <tr>
             <td class="tr">参数：</td>
             <td>
-                <textarea class="input-t middle" name="params" id="params" type="text" style="height: 250px;"  data-validator='{"required":1,"messages":{"required":"请输入接口参数"}}'><?php echo ($row["params"]); ?></textarea>
+                <textarea class="input-t middle" name="params" id="params" type="text" style="height: 300px;"  data-validator='{"required":1,"messages":{"required":"请输入接口参数"}}'><?php echo ($row["params"]); ?></textarea>
                 <span class="red">*</span>
             </td>
         </tr>

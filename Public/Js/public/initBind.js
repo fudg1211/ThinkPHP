@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 define(['../global/global'], function (g) {
-	$('.J_del').click(function(){
+    $('.J_del').click(function(){
         return confirm('确定要删除吗？');
     })
 });

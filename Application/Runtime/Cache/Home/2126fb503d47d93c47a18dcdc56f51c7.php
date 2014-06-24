@@ -11,7 +11,7 @@
     <div class="navbar-inner">
         <div class="container"><a class="brand" href="/">口袋web文档管理</a>
             <ul class="nav">
-                <li><a class="active" href="/project.html">项目列表</a></li>
+                <li><a class="active" href="http://localhost/ThinkPHP/index.php/Home/Index/index">项目列表</a></li>
             </ul>
         </div>
     </div>
@@ -37,7 +37,7 @@
         <tr>
             <td class="tr">参数：</td>
             <td>
-                <textarea class="input-t middle" name="params" id="params" type="text" style="height: 250px;"  data-validator='{"required":1,"messages":{"required":"请输入接口参数"}}'></textarea>
+                <textarea class="input-t middle" name="params" id="params" type="text" style="height: 300px;"  data-validator='{"required":1,"messages":{"required":"请输入接口参数"}}'></textarea>
                 <span class="red">*</span>
             </td>
         </tr>

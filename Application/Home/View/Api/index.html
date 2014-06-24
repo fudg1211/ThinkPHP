@@ -1,16 +1,21 @@
 <include file="Public:header" xmlns="http://www.w3.org/1999/html"/>
+<style type="text/css">
+    .code-title {
+        text-indent: -8px;
+    }
+</style>
 
 <div class="wrapper">
-    <h1 class="title">{$project.name}</h1>
+    <h1 class="title">{$project.name} <a href="add?projectId={$project.id}">增加</a> </h1>
     <hr>
     <div class="row">
         <div class="span12">
-                <foreach name="rows" item="item">
-                    <h4 id="h4_4">{$item.name}</h4>
-                    <pre><code>{$item.desc|trim}
-                        <p>【参数】</p><p>{$item.paramsFormat|trim}</p>
-                        <p>【返回】</p><p>{$item.result|trim}</p></code></pre>
-                </foreach>
+            <foreach name="rows" item="item">
+                <h4 id="h4_4">{$item.name} <a href="edit?id={$item.id}">编辑</a> <a class="J_del" href="del?id={$item.id}">删除</a></h4>
+                    <pre><code><div class="code-title">【描述】</div><if condition="$item.desc neq ''">{$item.desc|trim}<br/></if>
+                        <div class="code-title">【参数】</div><div>{$item.paramsFormat|trim}</div>
+                        <div class="code-title">【返回】</div><div>{$item.result|trim}</div></code></pre>
+            </foreach>
         </div>
     </div>
 </div>
@@ -18,8 +23,7 @@
 <include file="Public:include"/>
 
 <script type="text/javascript">
-//    requirejs([ 'index' ], function () {
-//    });
+    requirejs();
 </script>
 
 <include file="Public:footer"/>
